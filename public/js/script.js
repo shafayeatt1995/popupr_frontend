@@ -7,7 +7,7 @@
         document
           .querySelector("script[data-domain]")
           ?.getAttribute("data-domain");
-      const d = `https://popup-h1x7.onrender.com/app/domain-messages?domain=${c}`;
+      const d = `https://popupr.com/app/domain-messages?domain=${c}`;
       const e = await fetch(d);
       const f = e.headers.get("X-Domain-Data");
       if (f) {
@@ -18,7 +18,7 @@
   };
 
   const i = async () => {
-    const j = "https://popup-h1x7.onrender.com/css/style.css";
+    const j = "https://popupr.com/css/style.css";
     const k = await fetch(j);
     const l = await k.text();
     const m = document.createElement("style");

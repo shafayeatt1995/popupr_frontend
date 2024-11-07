@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <script
           defer
           data-domain="cholozai.com"
-          src="https://popup-h1x7.onrender.com/js/script.js"
+          src="https://popupr.com/js/script.js"
         ></script>
       </head>
       <body className={`${font.className} text-gray-800 font-medium`}>
