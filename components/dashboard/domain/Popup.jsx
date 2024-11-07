@@ -76,7 +76,7 @@ export default function Popup({ hide, messages, send, start }) {
             </div>
             <div className="w-full">
               <div className="font-semibold text-gray-950">{msg.title}</div>
-              <div className="font-normal text-gray-700 leading-tight">
+              <div className="text-sm font-normal text-gray-700 leading-tight">
                 {msg.message}
               </div>
             </div>
