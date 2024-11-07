@@ -9,12 +9,14 @@
           ?.getAttribute("data-domain");
       const d = `https://api.popupr.com/domain-messages?domain=${c}`;
       const e = await fetch(d);
-      const f = e.headers.get("X-Domain-Data");
-      if (f) {
-        const g = JSON.parse(f);
-        if (g && g.messages.length > 0) h(g);
+      const { dd } = await e.json();
+      console.log(dd);
+      if (dd) {
+        if (dd && dd.messages.length > 0) h(dd);
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const i = async () => {
@@ -27,6 +29,7 @@
   };
 
   const n = (o, p) => {
+    console.log(p);
     if (p > 1) {
       document
         .getElementById(`popup-message-${p - 1}`)
