@@ -64,6 +64,7 @@
 }
 
 .popup-message-content p {
+  font-size: 14px;
   font-weight: 400;
   color: #374151;
   line-height: 1.25;
