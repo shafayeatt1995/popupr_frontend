@@ -40,7 +40,7 @@
     q.id = `popup-message-${p}`;
     q.innerHTML = `
       <div class="popup-message-image">
-        <img src="${o.image}" alt="${o.title}" loading="lazy" decoding="async">
+        <img src="${o.image}" alt="${o.title}">
       </div>
       <div class="popup-message-content">
         <h2>${o.title}</h2>
