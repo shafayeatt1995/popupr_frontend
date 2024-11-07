@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
           defer
           data-domain="cholozai.com"
           src="https://popupr.com/js/script.js"
+               https://www.popupr.com/js/script.js
         ></script>
       </head>
       <body className={`${font.className} text-gray-800 font-medium`}>

@@ -7,7 +7,7 @@
         document
           .querySelector("script[data-domain]")
           ?.getAttribute("data-domain");
-      const d = `https://popupr.com/app/domain-messages?domain=${c}`;
+      const d = `https://api.popupr.com/domain-messages?domain=${c}`;
       const e = await fetch(d);
       const f = e.headers.get("X-Domain-Data");
       if (f) {
