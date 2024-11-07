@@ -40,7 +40,7 @@ export default function GenerateUrl({ productID }) {
 
   return (
     <Button className="w-full mt-10" onClick={generateUrl}>
-      Get Popup <ChevronRightIcon />
+      Get Popupr <ChevronRightIcon />
     </Button>
   );
 }

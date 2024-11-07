@@ -33,7 +33,7 @@ export default function Reason() {
           </span>
         </h2>
         <p className="md:text-lg text-center mt-5 md:px-20">
-          PopUp delivers impactful pop-up messages that highlight your visitors
+          PopUpr delivers impactful pop-up messages that highlight your visitors
           pain points and encourage them to take action.
         </p>
       </div>

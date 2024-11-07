@@ -10,7 +10,7 @@ import Usecase from "@/components/home/Usecase";
 import { authUser } from "@/services/nextAuth";
 
 export const metadata = {
-  title: "wake-up call Popup",
+  title: "wake-up call Popupr",
 };
 
 export default async function Home() {

@@ -42,7 +42,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="md:text-lg max-w-xl text-center md:mt-16 mt-8">
-          Instantly Engage with Impactful Popups! Captivate your visitors with
+          Instantly Engage with Impactful Popup! Captivate your visitors with
           striking, insightful notifications that spark curiosity, foster
           genuine engagement, and drive conversions effortlessly.
         </p>
@@ -60,7 +60,7 @@ export default function Hero() {
               buttonVariants({ variant: "indigo" })
             )} mt-10 px-10`}
           >
-            Get Popup <ArrowRightIcon />
+            Get PopUpr <ArrowRightIcon />
           </Link>
           {/* <ChevronUpIcon size={32} className="mt-3" />
           <div className="flex bg-indigo-300 p-2 rounded-lg gap-3 items-center">

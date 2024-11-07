@@ -16,7 +16,7 @@ export default function PopupItem({ domain }) {
       <div className="">
         <p className="font-bold">{domain.domain}</p>
         <ul className="text-sm font-normal mt-1">
-          <li>{domain.messages.length} popup messages</li>
+          <li>{domain.messages.length} popupr messages</li>
           <li>0 visitor in last 24h</li>
         </ul>
       </div>

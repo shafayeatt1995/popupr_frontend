@@ -82,7 +82,7 @@ export default function Dashboard() {
               </div>
               <div className="space-y-3">
                 <Input
-                  placeholder="popup.com"
+                  placeholder="popupr.com"
                   type="text"
                   required
                   ref={domain}

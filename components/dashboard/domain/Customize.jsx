@@ -129,9 +129,11 @@ export default function Customize({ params }) {
   };
   const deleteDomain = async () => {
     try {
-      await userApi.deleteDomain({ _id: domain._id });
-      toast.success("Domain Removed successfully");
-      router.push("/dashboard");
+      if (confirm("Are you sure you want to delete this domain?")) {
+        await userApi.deleteDomain({ _id: domain._id });
+        toast.success("Domain Removed successfully");
+        router.push("/dashboard");
+      }
     } catch (error) {}
   };
 
@@ -176,7 +178,7 @@ export default function Customize({ params }) {
             <div className="grid md:grid-cols-2 mt-5 gap-10">
               <form className="space-y-6">
                 <div>
-                  <Label htmlFor="start">Start popup after (ms)</Label>
+                  <Label htmlFor="start">Start popupr after (ms)</Label>
                   <Input
                     type="number"
                     id="start"
@@ -184,7 +186,7 @@ export default function Customize({ params }) {
                     onChange={(e) => setStart(e.target.value)}
                   />
                   <p className="text-sm font-normal mt-2">
-                    1. If the network is slow then the popup may take a few
+                    1. If the network is slow then the popupr may take a few
                     seconds to load
                   </p>
                   <p className="text-sm font-normal">
@@ -321,7 +323,7 @@ export default function Customize({ params }) {
                       onClick={addMessage}
                     >
                       <PlusIcon />
-                      Add popup
+                      Add popupr
                     </Button>
                   </div>
                 </div>
@@ -334,7 +336,7 @@ export default function Customize({ params }) {
                   {messageLoading && (
                     <Loader2Icon className="mr-2 size-4 animate-spin" />
                   )}
-                  Update popup
+                  Update popupr
                 </Button>
               </div>
             </div>
@@ -342,7 +344,7 @@ export default function Customize({ params }) {
           <hr className="my-10" />
           <div className="mx-auto max-w-lg text-center my-10">
             <h2 className="text-xl font-bold">
-              Activate Your Popup in Seconds 💥
+              Activate Your Popupr in Seconds 💥
             </h2>
             <p className="font-normal">
               Paste the script in the

@@ -17,9 +17,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+
         <script
           defer
-          data-domain="cholozai.com"
+          data-domain="popupr.com"
           src="https://popupr.com/js/script.js"
         ></script>
       </head>

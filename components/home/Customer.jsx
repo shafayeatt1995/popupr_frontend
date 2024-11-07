@@ -21,7 +21,7 @@ export default function Customer() {
               buttonVariants({ variant: "white", size: "lgt" })
             )} text-lg font-bold py-7 px-12 hidden md:flex`}
           >
-            Get Popup <ChevronRightIcon />
+            Get Popupr <ChevronRightIcon />
           </Link>
           <Link
             href="#pricing"
@@ -29,7 +29,7 @@ export default function Customer() {
               buttonVariants({ variant: "indigo", size: "lgt" })
             )} text-lg font-bold py-7 px-12 md:hidden`}
           >
-            Get Popup <ChevronRightIcon />
+            Get Popupr <ChevronRightIcon />
           </Link>
         </div>
       </div>

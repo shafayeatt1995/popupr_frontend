@@ -20,7 +20,7 @@ export default function Nav({ user }) {
             <div className="bg-gradient-to-br from-[#9b8eff] to-[#4b56f9] text-white p-2 rounded-lg">
               <SquareArrowOutUpRightIcon size={24} />
             </div>
-            <p className="text-2xl font-bold">Popup</p>
+            <p className="text-2xl font-bold">Popupr</p>
           </div>
           <div className="flex md:gap-5 gap-2 items-center">
             <NavAction user={user} />
