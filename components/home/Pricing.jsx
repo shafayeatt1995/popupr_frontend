@@ -22,7 +22,7 @@ export default function Pricing() {
             </h3>
           </div>
           <h3 className="text-3xl font-bold mb-2">Appetizer</h3>
-          <p>Take the first bite of Popup</p>
+          <p>Take the first bite of Popupr</p>
 
           <ul className="mt-6 space-y-4">
             <li className="flex items-center gap-2">
