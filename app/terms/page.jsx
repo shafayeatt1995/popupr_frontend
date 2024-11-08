@@ -17,28 +17,28 @@ export default function page() {
         </Link>
         <section class="max-w-3xl mx-auto p-6 bg-indigo-50 rounded-lg shadow-md mt-5">
           <h1 class="text-3xl font-bold text-gray-800 mb-4">
-            Terms and Conditions for PoopUp
+            Terms and Conditions for PopUpr
           </h1>
           <p class="text-gray-600 text-sm mb-6">
             Last Updated: September 26, 2023
           </p>
 
           <p class="text-gray-700 mb-6">
-            Welcome to PoopUp! These Terms of Service govern your use of the
-            PoopUp website at{" "}
-            <a href="https://poopup.co" class="text-indigo-500 underline">
-              https://poopup.co
+            Welcome to PopUpr! These Terms of Service govern your use of the
+            PopUpr website at{" "}
+            <a href="https://popupr.com" class="text-indigo-500 underline">
+              https://popupr.com
             </a>{" "}
-            and the services provided by PoopUp. By using our Website and
+            and the services provided by PopUpr. By using our Website and
             services, you agree to these Terms.
           </p>
 
           <div class="mb-6">
             <h2 class="text-xl font-semibold text-gray-800 mb-2">
-              1. Description of PoopUp
+              1. Description of PopUpr
             </h2>
             <p class="text-gray-700">
-              PoopUp is a platform that provides JavaScript code
+              PopUpr is a platform that provides JavaScript code
               {`boilerplate's`}
               designed to help entrepreneurs launch their startups efficiently.
             </p>
@@ -49,7 +49,7 @@ export default function page() {
               2. Ownership and Usage Rights
             </h2>
             <p class="text-gray-700">
-              When you purchase a package from PoopUp, you receive the rights to
+              When you purchase a package from PopUpr, you receive the rights to
               download and use the provided code to create your applications.
               While you own the code you develop using these {`boilerplate's`},
               resale of the code is prohibited. We offer a full refund within 7
@@ -104,16 +104,13 @@ export default function page() {
           <p class="text-gray-700">
             For any questions or concerns about these Terms of Service, please
             contact us at{" "}
-            <a
-              href="mailto:marc@mg.poopup.co"
-              class="text-indigo-600 underline"
-            >
-              marc@mg.poopup.co
+            <a href="mailto:anik@popupr.com" class="text-indigo-600 underline">
+              anik@popupr.com
             </a>
             .
           </p>
 
-          <p class="text-gray-700 mt-6">Thank you for choosing PoopUp!</p>
+          <p class="text-gray-700 mt-6">Thank you for choosing PopUpr!</p>
         </section>
       </div>
     </main>

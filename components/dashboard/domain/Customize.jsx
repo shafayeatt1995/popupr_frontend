@@ -107,6 +107,7 @@ export default function Customize({ params }) {
     try {
       const { id } = await params;
       const { domain } = await userApi.fetchSingleDomain({ id });
+      console.log(domain);
       setDomain(domain);
       setStart(domain.start);
       setSend(domain.send);

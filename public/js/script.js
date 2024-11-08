@@ -2,6 +2,7 @@
   let a;
   const b = async () => {
     try {
+      console.log("ami anik");
       const c =
         window.document.currentScript?.getAttribute("data-domain") ??
         document
@@ -10,7 +11,6 @@
       const d = `https://api.popupr.com/domain-messages?domain=${c}`;
       const e = await fetch(d);
       const { dd } = await e.json();
-      console.log(dd);
       if (dd) {
         if (dd && dd.messages.length > 0) h(dd);
       }
@@ -29,7 +29,6 @@
   };
 
   const n = (o, p) => {
-    console.log(p);
     if (p > 1) {
       document
         .getElementById(`popup-message-${p - 1}`)

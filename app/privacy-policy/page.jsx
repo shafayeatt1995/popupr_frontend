@@ -24,11 +24,11 @@ export default function page() {
           </p>
 
           <p className="text-gray-700 mb-6">
-            Thank you for visiting PoopUp. This Privacy Policy outlines how we
+            Thank you for visiting PopUpr. This Privacy Policy outlines how we
             collect, use, and protect your personal and non-personal information
             when you use our website located at{" "}
-            <a href="https://poopup.co" className="text-indigo-600 underline">
-              https://poopup.co
+            <a href="https://popupr.com" className="text-indigo-600 underline">
+              https://popupr.com
             </a>
             .
           </p>
@@ -108,7 +108,7 @@ export default function page() {
               4. {`Children's`} Privacy
             </h2>
             <p className="text-gray-700">
-              PoopUp is not intended for children under 13. We do not knowingly
+              PopUpr is not intended for children under 13. We do not knowingly
               collect information from children. If you believe your child has
               provided us with personal information, please contact us at the
               email below.
@@ -137,10 +137,10 @@ export default function page() {
             <p className="text-gray-700">
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:marc@mg.poopup.co"
+                href="mailto:anik@popupr.com"
                 className="text-indigo-600 underline"
               >
-                marc@mg.poopup.co
+                anik@popupr.com
               </a>
             </p>
             <p className="text-gray-700 mt-4">
@@ -150,7 +150,7 @@ export default function page() {
           </div>
 
           <p className="text-gray-700">
-            By using PoopUp, you consent to the terms of this Privacy Policy.
+            By using PopUpr, you consent to the terms of this Privacy Policy.
           </p>
         </section>
       </div>

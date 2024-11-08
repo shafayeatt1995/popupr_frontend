@@ -21,12 +21,12 @@ export default function FAQ() {
       body: "You don’t need anything else! Just copy and paste a small code snippet into your website's <code><head></code> tag. It works seamlessly with WordPress, Shopify, Webflow, Bubble, Wix, and more!",
     },
     {
-      title: "Does PoopUp work on mobile?",
-      body: "Yes! To keep your visitor's experience smooth, only one PoopUp will be displayed at a time.",
+      title: "Does PopUpr work on mobile?",
+      body: "Yes! To keep your visitor's experience smooth, only one PopUpr will be displayed at a time.",
     },
     {
       title: "What can I customize?",
-      body: `Currently, you can customize these key elements <ul class="mt-2"><li>PoopUp title</li><li>PoopUp body</li><li>PoopUp Icon</li><li>When are PoopUps firing</li><li>How often are PoopUps firing</li><li>How long are PoopUps displayed</li></ul>`,
+      body: `Currently, you can customize these key elements <ul class="mt-2"><li>PopUpr title</li><li>PopUpr body</li><li>PopUpr Icon</li><li>When are PopUprs firing</li><li>How often are PopUprs firing</li><li>How long are PopUprs displayed</li></ul>`,
     },
   ];
   return (

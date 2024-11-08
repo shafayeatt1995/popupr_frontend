@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-
         <script
           defer
           data-domain="popupr.com"

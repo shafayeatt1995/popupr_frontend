@@ -69,7 +69,7 @@ export default function Popup({ hide, messages, send, start }) {
                   alt={msg.title}
                   loading="lazy"
                   decoding="async"
-                  className="size-14 object-contain rounded"
+                  className="size-12 object-contain rounded"
                   src={msg.image}
                 />
               </div>
