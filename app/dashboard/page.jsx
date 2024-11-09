@@ -54,7 +54,7 @@ export default function Dashboard() {
     <div className=" container mx-auto">
       <div className="flex flex-col md:flex-row mt-10 gap-5 px-2 my-10">
         <div className="flex-1">
-          <h2 className="text-4xl font-bold">{domains.length} Domain</h2>
+          <h2 className="text-4xl font-bold">{domains.length} Domain links</h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 my-5 gap-5">
             {domains.map((domain, i) => (
               <PopupItem domain={domain} key={i} />
