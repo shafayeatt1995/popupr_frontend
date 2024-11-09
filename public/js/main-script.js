@@ -8,7 +8,7 @@
           .querySelector("script[data-domain]")
           ?.getAttribute("data-domain");
 
-      if (c === location.hostname) {
+      if (c === location.hostname && location.pathname === "/") {
         const d = `https://api.popupr.com/domain-messages?domain=${c}`;
         const e = await fetch(d);
         const { dd } = await e.json();

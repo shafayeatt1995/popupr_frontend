@@ -29,7 +29,7 @@ export async function openCheckout({ priceId, id, email, customData = {} }) {
       displayMode: "overlay",
       successUrl: "http://localhost:8080/payment-success",
     },
-    discountId: "dsc_01jc11amp84cjmpbtnm06f1fnn",
+    // discountId: "dsc_01jc11amp84cjmpbtnm06f1fnn",
     // customData,
   });
 }
