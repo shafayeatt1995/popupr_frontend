@@ -2,10 +2,17 @@ import { getServerSession } from "next-auth";
 import { getSession } from "next-auth/react";
 import { authOptions } from "@/config/authOptions";
 
-const getAuth = async () =>
-  typeof window === "undefined"
-    ? await getServerSession(authOptions)
-    : await getSession();
+let userSession = null;
+
+const getAuth = async () => {
+  if (userSession) return userSession;
+
+  userSession =
+    typeof window === "undefined"
+      ? await getServerSession(authOptions)
+      : await getSession();
+  return userSession;
+};
 
 export const jwtToken = async () => {
   const session = await getAuth();
@@ -14,5 +21,10 @@ export const jwtToken = async () => {
 
 export const authUser = async () => {
   const session = await getAuth();
-  return session?.user && (delete session.user.accessToken, session.user);
+  if (session?.user) {
+    const { accessToken, ...userWithoutToken } = session?.user;
+    return userWithoutToken;
+  } else {
+    return null;
+  }
 };

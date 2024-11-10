@@ -42,7 +42,7 @@ export default function Pricing() {
             </li>
           </ul>
 
-          <GenerateUrl productID="pro_01jbzyy1werp4r2kyq99kftwr6" />
+          <GenerateUrl productName="basic" />
           <p className="text-center mt-2">Pay once. Access forever.</p>
         </div>
         <div className="border-[3px] border-indigo-500 p-6 rounded-3xl relative">
@@ -77,7 +77,7 @@ export default function Pricing() {
               Simple analytics
             </li>
           </ul>
-          <GenerateUrl productID="pro_01jc02z8mq6tg0pjby94xb1ewd" />
+          <GenerateUrl productName="main_course" />
 
           <p className="text-center mt-2">Pay once. Access forever.</p>
         </div>

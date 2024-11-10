@@ -1,19 +1,25 @@
 import { initializePaddle } from "@paddle/paddle-js";
-let paddle = null;
+let paddleInstance = null;
 
 const init = async () => {
-  const paddleInstance = await initializePaddle({
+  if (paddleInstance) return paddleInstance;
+  paddleInstance = await initializePaddle({
     environment: process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT,
     token: process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN,
   });
 
-  if (paddleInstance) paddle = paddleInstance;
+  return paddleInstance;
 };
 
-export async function openCheckout({ priceId, id, email, customData = {} }) {
-  if (!paddle) await init();
+export async function openCheckout({
+  priceId,
+  email,
+  discountId,
+  customData = {},
+}) {
+  const paddle = await init();
 
-  paddle?.Checkout.open({
+  const payload = {
     items: [{ priceId, quantity: 1 }],
     customer: { email },
     settings: {
@@ -29,7 +35,8 @@ export async function openCheckout({ priceId, id, email, customData = {} }) {
       displayMode: "overlay",
       successUrl: "http://localhost:8080/payment-success",
     },
-    // discountId: "dsc_01jc11amp84cjmpbtnm06f1fnn",
-    // customData,
-  });
+    customData,
+  };
+  if (discountId) payload.discountId = discountId;
+  paddle?.Checkout.open(payload);
 }
