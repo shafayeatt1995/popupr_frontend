@@ -34,6 +34,7 @@ export default function GenerateUrl({ productName }) {
       router.push("/login");
     }
   };
+
   return (
     <Button className="w-full mt-10" onClick={generateUrl}>
       Get Popupr <ChevronRightIcon />
