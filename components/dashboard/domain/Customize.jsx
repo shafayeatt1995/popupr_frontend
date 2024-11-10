@@ -235,7 +235,6 @@ export default function Customize({ params }) {
                       className="space-y-4"
                     >
                       {messages.map((message, i) => (
-                        // <div className="" key={i}>
                         <div
                           className="flex gap-2 bg-gray-100/70 backdrop-blur-sm p-3 rounded-lg"
                           key={i}
@@ -310,11 +309,6 @@ export default function Customize({ params }) {
                             </button>
                           </div>
                         </div>
-                        //   <input
-                        //     placeholder="Target url (optional)"
-                        //     className="w-full mt-1"
-                        //   />
-                        // </div>
                       ))}
                     </ReactSortable>
                   </div>

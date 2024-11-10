@@ -4,6 +4,7 @@ import eventBus from "@/utils/event";
 import React, { useCallback, useEffect, useState } from "react";
 
 export default function Popup({ hide, messages, send, start }) {
+  const newMessages = [...messages].reverse();
   const [visibleMessages, setVisibleMessages] = useState([]);
   const [delivery, setDelivery] = useState(true);
 
@@ -12,8 +13,8 @@ export default function Popup({ hide, messages, send, start }) {
     const timeout = setTimeout(() => {
       let index = 0;
       const interval = setInterval(() => {
-        if (index < messages.length) {
-          const msg = messages[index++];
+        if (index < newMessages.length) {
+          const msg = newMessages[index++];
           setVisibleMessages((prev) => [...prev, msg]);
           setTimeout(() => {
             setVisibleMessages((prev) => prev.filter((m) => m !== msg));
@@ -26,12 +27,12 @@ export default function Popup({ hide, messages, send, start }) {
       return () => clearInterval(interval);
     }, start);
     return () => clearTimeout(timeout);
-  }, [hide, messages, send, start]);
+  }, [hide, newMessages, send, start]);
   const mobileTest = useCallback(() => {
     setDelivery(false);
     const showMessages = (i = 0) => {
-      if (i >= messages.length) return setDelivery(true);
-      setVisibleMessages([messages[i]]);
+      if (i >= newMessages.length) return setDelivery(true);
+      setVisibleMessages([newMessages[i]]);
       setTimeout(() => {
         setVisibleMessages([]);
         setTimeout(() => showMessages(i + 1), 100);
@@ -39,7 +40,7 @@ export default function Popup({ hide, messages, send, start }) {
     };
     const timeout = setTimeout(showMessages, start);
     return () => clearTimeout(timeout);
-  }, [hide, messages, start]);
+  }, [hide, newMessages, start]);
 
   useEffect(() => {
     const handleRunTest = () => {

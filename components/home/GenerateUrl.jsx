@@ -13,16 +13,17 @@ export default function GenerateUrl({ productID }) {
   const generateUrl = async () => {
     if (user.current) {
       try {
-        const { priceData } = await userApi.generatePaymentUrl({ productID });
-        if (priceData) {
-          console.log(priceData);
-          await openCheckout({
-            priceId: "pri_01jc030me2qnyrjqe1b0v1ppsn",
-            id: user.current._id,
-            email: user.current.email,
-            customData: { user: user.current, package: priceData.name },
-          });
-        }
+        const data = await userApi.generatePaymentUrl({ productID });
+        console.log(data);
+        // if (data.priceData) {
+        //   console.log(data.priceData);
+        //   await openCheckout({
+        //     priceId: "pri_01jc030me2qnyrjqe1b0v1ppsn",
+        //     id: user.current._id,
+        //     email: user.current.email,
+        //     customData: { user: user.current, package: data.priceData.name },
+        //   });
+        // }
       } catch (error) {}
     } else {
       router.push("/login");

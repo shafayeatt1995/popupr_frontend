@@ -57,6 +57,7 @@
   };
 
   const h = ({ hide, messages, send, start }) => {
+    const o = [...messages].reverse();
     const s = document.createElement("div");
     s.classList.add("popup-container");
     a = document.createElement("div");
@@ -65,8 +66,8 @@
     const t = () => {
       let u = 0;
       const v = setInterval(() => {
-        if (u < messages.length) {
-          const w = messages[u++];
+        if (u < o.length) {
+          const w = o[u++];
           n(w, u);
           setTimeout(() => {
             r();
@@ -78,7 +79,7 @@
     };
     const x = () => {
       const y = (z = 0) => {
-        n(messages[z], z);
+        n(o[z], z);
         setTimeout(() => {
           r();
           setTimeout(() => y(z + 1), 100);
