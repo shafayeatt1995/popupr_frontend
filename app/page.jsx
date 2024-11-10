@@ -14,10 +14,9 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const user = await authUser();
   return (
     <>
-      <Header user={user} />
+      <Header />
       <Hero />
       <Marketing />
       <Reason />

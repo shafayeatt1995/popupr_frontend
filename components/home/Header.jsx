@@ -1,13 +1,24 @@
 "use client";
 import { MenuIcon, SquareArrowOutUpRightIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { authUser } from "@/services/nextAuth";
 
-export default function Header({ user }) {
+export default function Header() {
   const [menu, setMenu] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const user = await authUser();
+      setUser(user);
+    };
+    fetch();
+  }, []);
+
   return (
     <div className="container mx-auto relative z-10">
       <div className="flex justify-between p-4 bg-white">
