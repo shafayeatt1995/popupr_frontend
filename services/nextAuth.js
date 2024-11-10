@@ -28,3 +28,7 @@ export const authUser = async () => {
     return null;
   }
 };
+
+export const removeSession = () => {
+  userSession = null;
+};
