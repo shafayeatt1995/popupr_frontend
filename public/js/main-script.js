@@ -1,5 +1,8 @@
 (function () {
   let a;
+  const cleanDomain = (domain) =>
+    domain.startsWith("www.") ? domain.slice(4) : domain;
+
   const b = async () => {
     try {
       const c =
@@ -8,7 +11,11 @@
           .querySelector("script[data-domain]")
           ?.getAttribute("data-domain");
 
-      if (c === location.hostname && location.pathname === "/") {
+      const locationHostname =
+        cleanDomain(location.hostname) + location.pathname.length > 1
+          ? location.pathname
+          : "";
+      if (c === locationHostname) {
         const d = `https://api.popupr.com/domain-messages?domain=${c}`;
         const e = await fetch(d);
         const { dd } = await e.json();

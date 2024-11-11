@@ -18,11 +18,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth hydrated">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        {/* <script
+        <script
           defer
           data-domain="popupr.com"
           src="https://popupr.com/js/script.js"
-        ></script> */}
+        ></script>
       </head>
       <body className={`${font.className} text-gray-800 font-medium`}>
         <AuthProvider>{children}</AuthProvider>
