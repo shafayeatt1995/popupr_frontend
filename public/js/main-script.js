@@ -6,15 +6,15 @@
   const b = async () => {
     try {
       const c =
-        window.document.currentScript?.getAttribute("data-domain") ??
+        document.currentScript?.getAttribute("data-domain") ??
         document
           .querySelector("script[data-domain]")
           ?.getAttribute("data-domain");
 
       const locationHostname =
-        cleanDomain(location.hostname) + location.pathname.length > 1
+        cleanDomain(location.hostname) + (location.pathname.length > 1
           ? location.pathname
-          : "";
+          : "");
       if (c === locationHostname) {
         const d = `https://api.popupr.com/domain-messages?domain=${c}`;
         const e = await fetch(d);
