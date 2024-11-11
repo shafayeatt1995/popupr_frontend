@@ -7,7 +7,7 @@ import { removeSession } from "@/services/nextAuth";
 
 export default function NavLogout() {
   const submit = async () => {
-    removeSession();
+    await removeSession();
     await signOut();
   };
   return (
