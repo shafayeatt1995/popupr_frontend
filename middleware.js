@@ -2,7 +2,7 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 const guest = ["/login", "/social-login"];
-const authExactUrls = [];
+const authExactUrls = ["/payment-success"];
 const authStartsWithRoutes = ["/dashboard"];
 
 export async function middleware(req) {
@@ -22,7 +22,7 @@ export async function middleware(req) {
   }
 
   if (!token && (isExactAuthRoute || isStartsWithAuthRoute)) {
-    return NextResponse.redirect(new URL("/", req.url));
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 
   return NextResponse.next();

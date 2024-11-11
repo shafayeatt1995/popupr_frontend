@@ -21,15 +21,16 @@ export default function GenerateUrl({ productName }) {
         const user = await authUser();
         if (user) {
           try {
-            const { priceID, discountID } = await userApi.generatePaymentUrl({
-              productName,
-            });
+            const { priceID, discountID, popupr_pac } =
+              await userApi.generatePaymentUrl({
+                productName,
+              });
             if (priceID) {
               await openCheckout({
                 priceId: priceID,
                 discountId: discountID,
                 email: user.email,
-                customData: { user },
+                customData: { user, popupr_pac },
               });
             }
           } catch (error) {

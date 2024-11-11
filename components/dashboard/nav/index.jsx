@@ -10,18 +10,19 @@ import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { CreditCardIcon, SquareArrowOutUpRightIcon } from "lucide-react";
 import NavAction from "./NavAction";
 import NavLogout from "./NavLogout";
+import Link from "next/link";
 
 export default function Nav({ user }) {
   return (
     <div className="shadow-md">
       <div className="container mx-auto">
         <div className="flex justify-between py-2 px-2">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="bg-gradient-to-br from-[#9b8eff] to-[#4b56f9] text-white p-2 rounded-lg">
               <SquareArrowOutUpRightIcon size={24} />
             </div>
             <p className="text-2xl font-bold">Popupr</p>
-          </div>
+          </Link>
           <div className="flex md:gap-5 gap-2 items-center">
             <NavAction user={user} />
             <DropdownMenu>
