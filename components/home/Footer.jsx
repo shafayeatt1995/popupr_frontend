@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="mt-3">
-              Catch attention with wake-up call popups and turn visitors into
+              Catch attention with wake-up call popupr and turn visitors into
               customers!
             </p>
             <p className="mt-4 text-gray-500">
@@ -60,8 +60,8 @@ export default function Footer() {
       </div>
       <div className="border-t md:px-10 md:py-8 p-4">
         <p className="text-sm lg:text-left text-center">
-          Hey Curious 👋 I{`'`}m Jack, creator of PopUp. Thanks for taking the
-          time to explore!.
+          Hey 👋 I{`'`}m shafayet, creator of PopUpr. Thanks for taking the time
+          to explore!.
         </p>
       </div>
     </footer>

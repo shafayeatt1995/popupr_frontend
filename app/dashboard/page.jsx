@@ -7,10 +7,12 @@ import { toast } from "sonner";
 import { paginate } from "@/utils";
 import { ChevronRightIcon, Loader2Icon } from "lucide-react";
 import PopupItem from "@/components/dashboard/PopupItem";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Dashboard() {
   const perPage = 24;
   const [loading, setLoading] = useState(false);
+  const [fetchLoading, setFetchLoading] = useState(false);
   const [domains, setDomains] = useState([]);
   const click = useRef(true);
   const domain = useRef(null);
@@ -41,9 +43,13 @@ export default function Dashboard() {
 
   const fetchItems = async () => {
     try {
+      setFetchLoading(true);
       const { items } = await userApi.fetchDomain(paginate(domains, perPage));
       setDomains((p) => [...p, ...items]);
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      setFetchLoading(false);
+    }
   };
 
   useState(() => {
@@ -56,9 +62,13 @@ export default function Dashboard() {
         <div className="flex-1">
           <h2 className="text-4xl font-bold">{domains.length} Domain links</h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 my-5 gap-5">
-            {domains.map((domain, i) => (
-              <PopupItem domain={domain} key={i} />
-            ))}
+            {fetchLoading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <Skeleton className="h-24 w-full rounded-lg" key={i} />
+                ))
+              : domains.map((domain, i) => (
+                  <PopupItem domain={domain} key={i} />
+                ))}
           </div>
           <div className="flex justify-center">
             {domains.length

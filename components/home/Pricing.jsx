@@ -9,17 +9,18 @@ export default function Pricing() {
         <p className="md:text-5xl text-2xl text-center font-black mt-5">
           Transform your product into a must have choice
         </p>
+        <p className="text-center mt-3">
+          🎊First 100 members will enjoy lifetime access. Only 17 slots are
+          open.🎊
+        </p>
       </div>
       <PricingTable />
       <div className="text-center max-w-lg mx-auto mt-5">
-        <h3 className="font-bold text-lg">
-          🎊 Celebrate Our Launch with an Exclusive Discount 🎊
-        </h3>
-        <p className="text-center text-sm">
+        {/* <p className="text-center text-sm">
           Be one of the first to experience our new service and enjoy a special
           launch price! Only 73 discounted spots are left. discount applicable
           for first 100 sales.
-        </p>
+        </p> */}
       </div>
     </div>
   );

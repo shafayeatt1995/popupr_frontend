@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import Popup from "./Popup";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Customize({ params }) {
   const router = useRouter();
@@ -27,7 +28,7 @@ export default function Customize({ params }) {
   const [start, setStart] = useState("");
   const [send, setSend] = useState("");
   const [hide, setHide] = useState("");
-  const [messages, setMessages] = useState();
+  const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [timerLoading, setTimerLoading] = useState(false);
   const [messageLoading, setMessageLoading] = useState(false);
@@ -105,6 +106,7 @@ export default function Customize({ params }) {
   };
   const fetchDomain = useCallback(async () => {
     try {
+      setLoading(true);
       const { id } = await params;
       const { domain } = await userApi.fetchSingleDomain({ id });
       setDomain(domain);
@@ -113,10 +115,10 @@ export default function Customize({ params }) {
       setHide(domain.hide);
       setMessages(domain.messages);
       script.current = `<script defer data-domain="${domain.domain}" src="${window.location.origin}/js/script.js"></script>`;
-      setLoading(false);
     } catch (error) {
       console.error(error);
     } finally {
+      setLoading(false);
     }
   }, [params]);
   const copyScript = async () => {
@@ -143,11 +145,14 @@ export default function Customize({ params }) {
 
   return (
     <>
-      {loading ? (
-        <div className=""></div>
-      ) : (
-        <>
-          <div className="rounded-xl bg-indigo-200 shadow-inner md:p-10 py-4 px-2 my-5">
+      <div className="rounded-xl bg-indigo-200 shadow-inner md:p-10 py-4 px-2 my-5">
+        {loading ? (
+          <div className="flex gap-10 h-[450px]">
+            <Skeleton className="size-full rounded-lg" />
+            <Skeleton className="size-full rounded-lg" />
+          </div>
+        ) : (
+          <>
             <div className="flex items-center gap-2">
               <div className="flex justify-between w-full">
                 <div className="flex items-center gap-1">
@@ -334,36 +339,35 @@ export default function Customize({ params }) {
                 </Button>
               </div>
             </div>
-          </div>
-          <hr className="my-10" />
-          <div className="mx-auto max-w-lg text-center my-10">
-            <h2 className="text-xl font-bold">
-              Activate Your Popupr in Seconds 💥
-            </h2>
-            <p className="font-normal">
-              Paste the script in the
-              <code className="font-semibold px-1">{`<head>`}</code>of your
-              website
-            </p>
+          </>
+        )}
+      </div>
+      <hr className="my-10" />
+      <div className="mx-auto max-w-lg text-center my-10">
+        <h2 className="text-xl font-bold">
+          Activate Your Popupr in Seconds 💥
+        </h2>
+        <p className="font-normal">
+          Paste the script in the
+          <code className="font-semibold px-1">{`<head>`}</code>of your website
+        </p>
 
-            <div className="flex bg-indigo-100 p-5 rounded-xl shadow-inner mt-10 items-center gap-3">
-              <div className="flex-1 break-all md:break-normal">
-                {script.current}
-              </div>
-              <div className="w-10">
-                <button
-                  className="size-10 rounded-full bg-white flex justify-center items-center"
-                  onClick={copyScript}
-                >
-                  <CopyIcon size={20} />
-                </button>
-              </div>
-            </div>
+        <div className="flex bg-indigo-100 p-5 rounded-xl shadow-inner mt-10 items-center gap-3">
+          <div className="flex-1 break-all md:break-normal">
+            {script.current}
           </div>
+          <div className="w-10">
+            <button
+              className="size-10 rounded-full bg-white flex justify-center items-center"
+              onClick={copyScript}
+            >
+              <CopyIcon size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
 
-          <Popup start={start} send={send} hide={hide} messages={messages} />
-        </>
-      )}
+      <Popup start={start} send={send} hide={hide} messages={messages} />
     </>
   );
 }
