@@ -77,7 +77,7 @@ export default function Dashboard() {
     } else {
       fetchItems();
     }
-  }, []);
+  }, [fetchItems, searchParams]);
 
   return (
     <>

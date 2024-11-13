@@ -2,6 +2,7 @@ import { Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/providers/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
 
 const font = Red_Hat_Display({
   subsets: ["latin"],
@@ -18,21 +19,47 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth hydrated">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-46MSP9DWZR"
         ></script>
-        <script src="https://popupr.com/js/gtag.js"></script>
-        <script src="https://popupr.com/js/clarity.js"></script>
+        <script
+          type="text/javascript"
+          src="https://popupr.com/js/analytics.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="https://popupr.com/js/clarity.js"
+        ></script>
         <script
           defer
           data-domain="popupr.com"
           src="https://popupr.com/js/script.js"
-        ></script>
+        ></script> */}
       </head>
       <body className={`${font.className} text-gray-800 font-medium`}>
         <AuthProvider>{children}</AuthProvider>
         <Toaster position="top-right" expand={true} richColors />
+
+        <Script
+          strategy="afterInteractive"
+          async={true}
+          src="https://www.googletagmanager.com/gtag/js?id=G-46MSP9DWZR"
+        />
+        <Script
+          strategy="afterInteractive"
+          src="https://popupr.com/js/analytics.js"
+        />
+        <Script
+          strategy="afterInteractive"
+          src="https://popupr.com/js/clarity.js"
+        />
+        <Script
+          strategy="afterInteractive"
+          defer={true}
+          data-domain="popupr.com"
+          src="https://popupr.com/js/script.js"
+        />
       </body>
     </html>
   );
