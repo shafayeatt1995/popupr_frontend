@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { userApi } from "@/server";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,7 +46,7 @@ export default function Dashboard() {
       }
     }
   };
-  const fetchItems = async () => {
+  const fetchItems = useCallback(async () => {
     try {
       setFetchLoading(true);
       const { items } = await userApi.fetchDomain(paginate(domains, perPage));
@@ -55,7 +55,7 @@ export default function Dashboard() {
     } finally {
       setFetchLoading(false);
     }
-  };
+  }, [domains]);
   const loginAgain = async () => {
     try {
       await removeSession();
