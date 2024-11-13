@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { userApi } from "@/server";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useSearchParams } from "next/navigation";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { signOut } from "next-auth/react";
+import { removeSession } from "@/services/nextAuth";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
@@ -55,12 +56,27 @@ export default function Dashboard() {
       setFetchLoading(false);
     }
   };
+  const loginAgain = async () => {
+    try {
+      await removeSession();
+      await signOut();
+      router.push("/login");
+    } catch (error) {}
+  };
+  const closePopup = async () => {
+    try {
+      setIsOpen(false);
+      await fetchItems;
+    } catch (error) {}
+  };
 
-  useState(() => {
+  useEffect(() => {
     const logoutQuery = searchParams.get("logout");
-    if (logoutQuery == "true") setIsOpen(true);
-
-    fetchItems();
+    if (logoutQuery == "true") {
+      setIsOpen(true);
+    } else {
+      fetchItems();
+    }
   }, []);
 
   return (
@@ -136,10 +152,10 @@ export default function Dashboard() {
               </p>
             </div>
             <div className="flex justify-center gap-4 mt-5">
-              <Button variant="danger" onClick={() => setIsOpen(false)}>
+              <Button variant="danger" onClick={closePopup}>
                 Cancel
               </Button>
-              <Button onClick={async () => await signOut()}>Logout</Button>
+              <Button onClick={loginAgain}>Logout</Button>
             </div>
           </div>
         </DialogContent>
