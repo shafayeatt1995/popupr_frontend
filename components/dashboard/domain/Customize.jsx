@@ -18,7 +18,6 @@ import { userApi } from "@/server";
 import { toast } from "sonner";
 import Popup from "./Popup";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Customize({ params }) {
@@ -147,7 +146,7 @@ export default function Customize({ params }) {
     <>
       <div className="rounded-xl bg-indigo-200 shadow-inner md:p-10 py-4 px-2 my-5">
         {loading ? (
-          <div className="flex gap-10 h-[450px]">
+          <div className="flex flex-col md:flex-row gap-10 h-[450px]">
             <Skeleton className="size-full rounded-lg" />
             <Skeleton className="size-full rounded-lg" />
           </div>
@@ -157,7 +156,7 @@ export default function Customize({ params }) {
               <div className="flex justify-between w-full">
                 <div className="flex items-center gap-1">
                   <img
-                    src={domain.favicon}
+                    src={domain?.favicon}
                     alt={domain.domain}
                     className="size-8 object-contain"
                   />

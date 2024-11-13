@@ -131,7 +131,7 @@ export default function Dashboard() {
           <div className="flex flex-col gap-4">
             <div className="text-center flex items-center flex-col gap-4">
               <RefreshCcwIcon size={90} />
-              <p className="text-3xl font-bold">
+              <p className="text-xl md:text-3xl font-bold">
                 Please logout and login again. It will update your session data.
               </p>
             </div>

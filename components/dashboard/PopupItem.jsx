@@ -9,7 +9,7 @@ export default function PopupItem({ domain }) {
       className="w-full flex shadow-inner rounded-lg bg-indigo-50 p-3 gap-3 cursor-pointer"
     >
       <img
-        src={domain.favicon}
+        src={domain?.favicon}
         alt={domain.domain}
         className="size-8 object-contain"
       />
