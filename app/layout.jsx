@@ -19,6 +19,14 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-46MSP9DWZR"
+        ></script>
+        <script
+          async
+          src="https://popupr.com/js/gtag.js"
+        ></script>
+        <script
           defer
           data-domain="popupr.com"
           src="https://popupr.com/js/script.js"
