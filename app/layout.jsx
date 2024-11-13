@@ -40,6 +40,14 @@ export default function RootLayout({ children }) {
       <body className={`${font.className} text-gray-800 font-medium`}>
         <AuthProvider>{children}</AuthProvider>
         <Toaster position="top-right" expand={true} richColors />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N5HN5SW3"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
 
         <Script
           strategy="afterInteractive"
@@ -53,6 +61,10 @@ export default function RootLayout({ children }) {
         <Script
           strategy="afterInteractive"
           src="https://popupr.com/js/clarity.js"
+        />
+        <Script
+          strategy="afterInteractive"
+          src="https://popupr.com/js/gtag.js"
         />
         <Script
           strategy="afterInteractive"
