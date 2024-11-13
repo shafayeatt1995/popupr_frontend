@@ -18,24 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth hydrated">
       <head>
+        <meta
+          name="google-site-verification"
+          content="yNPsvBfj7DAK0qrHFpO-1fycpk5MQyKEpjrE9UPWW24"
+        />
         <link rel="icon" href="/favicon.ico" />
-        {/* <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-46MSP9DWZR"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://popupr.com/js/analytics.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://popupr.com/js/clarity.js"
-        ></script>
-        <script
-          defer
-          data-domain="popupr.com"
-          src="https://popupr.com/js/script.js"
-        ></script> */}
       </head>
       <body className={`${font.className} text-gray-800 font-medium`}>
         <AuthProvider>{children}</AuthProvider>
