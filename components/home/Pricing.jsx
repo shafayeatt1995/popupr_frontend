@@ -10,7 +10,7 @@ export default function Pricing() {
           Transform your product into a must have choice
         </p>
         <p className="text-center mt-3">
-          🎊First 100 members will enjoy lifetime access. Only 17 slots are
+          🎊First 100 members will enjoy lifetime access. Only 93 slots are
           open.🎊
         </p>
       </div>

@@ -13,7 +13,7 @@ export default function GenerateUrl({ productName }) {
   const [loading, setLoading] = useState(false);
   const click = useRef(true);
 
-  const openUrl = async () => {
+  const paddleUrl = async () => {
     if (click.current) {
       try {
         click.current = false;
@@ -33,6 +33,35 @@ export default function GenerateUrl({ productName }) {
                 customData: { user, popupr_pac },
               });
             }
+          } catch (error) {
+            if (error?.error?.toast) {
+              toast.error(error.error.toast);
+            }
+          }
+        } else {
+          router.push("/login");
+        }
+      } catch (error) {
+      } finally {
+        click.current = true;
+        setLoading(false);
+      }
+    }
+  };
+  const openUrl = async () => {
+    if (click.current) {
+      try {
+        click.current = false;
+        setLoading(true);
+        const user = await authUser();
+        if (user) {
+          try {
+            const { popupr_pac, url, discountCode } =
+              await userApi.generatePaymentUrl({ productName });
+            let generateURL = `${url}?checkout[custom][userID]=${user._id}&checkout[custom][popuprPac]=${popupr_pac}`;
+            if (discountCode)
+              generateURL += `&checkout[discount_code]=${discountCode}`;
+            window.open(generateURL, "_self");
           } catch (error) {
             if (error?.error?.toast) {
               toast.error(error.error.toast);
