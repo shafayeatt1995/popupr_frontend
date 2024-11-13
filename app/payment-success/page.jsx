@@ -19,9 +19,7 @@ export default function Component() {
       await removeSession();
       await signOut();
       router.push("/login");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
