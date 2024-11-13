@@ -22,10 +22,8 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-46MSP9DWZR"
         ></script>
-        <script
-          async
-          src="https://popupr.com/js/gtag.js"
-        ></script>
+        <script src="https://popupr.com/js/gtag.js"></script>
+        <script src="https://popupr.com/js/clarity.js"></script>
         <script
           defer
           data-domain="popupr.com"
