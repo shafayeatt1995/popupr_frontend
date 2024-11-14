@@ -46,16 +46,16 @@ export default function Dashboard() {
       }
     }
   };
-  const fetchItems = useCallback(async () => {
+  const fetchItems = async () => {
     try {
       setFetchLoading(true);
       const { items } = await userApi.fetchDomain(paginate(domains, perPage));
-      setDomains((p) => [...p, ...items]);
+      setDomains((prev) => [...prev, ...items]);
     } catch (error) {
     } finally {
       setFetchLoading(false);
     }
-  }, [domains]);
+  };
   const loginAgain = async () => {
     try {
       await removeSession();
@@ -66,7 +66,7 @@ export default function Dashboard() {
   const closePopup = async () => {
     try {
       setIsOpen(false);
-      await fetchItems;
+      await fetchItems();
     } catch (error) {}
   };
 
@@ -75,9 +75,9 @@ export default function Dashboard() {
     if (logoutQuery == "true") {
       setIsOpen(true);
     } else {
-      fetchItems();
+      (async () => await fetchItems())();
     }
-  }, [fetchItems, searchParams]);
+  }, []);
 
   return (
     <>
