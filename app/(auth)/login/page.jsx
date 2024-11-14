@@ -1,16 +1,20 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function login() {
+export default function Login() {
   const socialLogin = (provider) => {
     window.open(
       `${process.env.NEXT_PUBLIC_API_URL}/auth/social-login/${provider}`,
       "_self"
     );
   };
+  useEffect(() => {
+    document.title = `Login | Popupr`;
+  }, []);
 
   return (
     <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
@@ -47,6 +51,20 @@ export default function login() {
             />
             Sign in with google
           </Button>
+          <div className="relative my-5">
+            <hr />
+            <p className="text-gray-500 absolute left-0 right-0 top-0 text-center -mt-3 ">
+              <span className="bg-white px-5">or</span>
+            </p>
+          </div>
+          <Link
+            href="/"
+            className={`${cn(
+              buttonVariants({ variant: "indigo", size: "lg" })
+            )} w-full`}
+          >
+            Back to home
+          </Link>
         </div>
       </div>
     </div>

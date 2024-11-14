@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { userApi } from "@/server";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,7 @@ import { useSearchParams } from "next/navigation";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { signOut } from "next-auth/react";
 import { removeSession } from "@/services/nextAuth";
+import Head from "next/head";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
@@ -77,6 +78,9 @@ export default function Dashboard() {
     } else {
       (async () => await fetchItems())();
     }
+  }, []);
+  useEffect(() => {
+    document.title = "Dashboard | Popupr";
   }, []);
 
   return (

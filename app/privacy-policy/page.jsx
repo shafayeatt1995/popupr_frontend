@@ -4,6 +4,7 @@ import { Undo2Icon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = { title: "Privacy policy | Popupr" };
 export default function page() {
   return (
     <main className="max-w-xl mx-auto">

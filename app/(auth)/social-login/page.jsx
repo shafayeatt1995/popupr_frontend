@@ -43,7 +43,7 @@ export default function SocialLogin() {
       }
       await getDetails();
     };
-
+    document.title = `Social Login | Popupr`;
     init();
 
     return () => {

@@ -7,6 +7,7 @@ import { Undo2Icon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = { title: "Dashboard | Popupr" };
 export default async function page({ params }) {
   return (
     <div className="container mx-auto">

@@ -9,9 +9,7 @@ import Reason from "@/components/home/Reason";
 import Usecase from "@/components/home/Usecase";
 import { authUser } from "@/services/nextAuth";
 
-export const metadata = {
-  title: "wake-up call Popupr",
-};
+export const metadata = { title: "Turn visitor into customer | Popupr" };
 
 export default async function Home() {
   return (

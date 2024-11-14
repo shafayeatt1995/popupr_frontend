@@ -4,6 +4,7 @@ import { Undo2Icon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = { title: "Terms | Popupr" };
 export default function page() {
   return (
     <main class="max-w-xl mx-auto">

@@ -114,6 +114,7 @@ export default function Customize({ params }) {
       setHide(domain.hide);
       setMessages(domain.messages);
       script.current = `<script defer data-domain="${domain.domain}" src="${window.location.origin}/js/script.js"></script>`;
+      document.title = `${domain.domain} | Popupr`;
     } catch (error) {
       console.error(error);
     } finally {
