@@ -12,9 +12,8 @@
           ?.getAttribute("data-domain");
 
       const locationHostname =
-        cleanDomain(location.hostname) + (location.pathname.length > 1
-          ? location.pathname
-          : "");
+        cleanDomain(location.hostname) +
+        (location.pathname.length > 1 ? location.pathname : "");
       if (c === locationHostname) {
         const d = `https://api.popupr.com/domain-messages?domain=${c}`;
         const e = await fetch(d);
@@ -38,21 +37,21 @@
   const n = (o, p) => {
     if (p > 1) {
       document
-        .getElementById(`popup-message-${p - 1}`)
+        .getElementById(`popupr-message-${p - 1}`)
         ?.classList.replace("animate-slideIn", "animate-appearFromRight");
     }
     const q = document.createElement("div");
-    q.className = `popup-message animate-slideIn`;
-    q.id = `popup-message-${p}`;
+    q.className = `popupr-message animate-slideIn`;
+    q.id = `popupr-message-${p}`;
     q.innerHTML = `
-      <div class="popup-message-image">
+      <div class="popupr-message-image">
         <img src="${o.image}" alt="${o.title}">
       </div>
-      <div class="popup-message-content">
+      <div class="popupr-message-content">
         <h2>${o.title}</h2>
         <p>${o.message}</p>
       </div>
-      <div class="popup-times">
+      <div class="popupr-times">
         <p class="text-sm text-gray-600">${o.time}</p>
       </div>
     `;
@@ -66,9 +65,9 @@
   const h = ({ hide, messages, send, start }) => {
     const o = [...messages].reverse();
     const s = document.createElement("div");
-    s.classList.add("popup-container");
+    s.classList.add("popupr-container");
     a = document.createElement("div");
-    a.classList.add("popup-messages");
+    a.classList.add("popupr-messages");
     s.appendChild(a);
     const t = () => {
       let u = 0;
