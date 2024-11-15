@@ -1,4 +1,4 @@
-import { apiLogin } from "@/server/auth/auth";
+import { apiLogin, apiRefreshToken } from "@/server/auth/auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
@@ -9,7 +9,11 @@ export const authOptions = {
       credentials: {},
       async authorize(credentials, req) {
         try {
-          return await apiLogin(credentials);
+          if (credentials?.token) {
+            return await apiRefreshToken(credentials);
+          } else {
+            return await apiLogin(credentials);
+          }
         } catch (err) {
           return null;
         }

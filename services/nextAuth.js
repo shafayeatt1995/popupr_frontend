@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { getSession } from "next-auth/react";
+import { getSession, signIn, signOut } from "next-auth/react";
 import { authOptions } from "@/config/authOptions";
 
 let userSession = null;
@@ -29,6 +29,16 @@ export const authUser = async () => {
   }
 };
 
-export const removeSession = () => {
+export const logOut = async () => {
+  userSession = null;
+  await signOut();
+};
+
+export const refreshToken = async () => {
+  const token = await jwtToken();
+  await signIn("credentials", {
+    redirect: false,
+    token,
+  });
   userSession = null;
 };

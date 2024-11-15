@@ -5,14 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { paginate } from "@/utils";
-import { ChevronRightIcon, Loader2Icon, RefreshCcwIcon } from "lucide-react";
+import { ChevronRightIcon, Loader2Icon, RefreshCwIcon } from "lucide-react";
 import PopupItem from "@/components/dashboard/PopupItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSearchParams } from "next/navigation";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { signOut } from "next-auth/react";
-import { removeSession } from "@/services/nextAuth";
-import Head from "next/head";
+import { refreshToken } from "@/services/nextAuth";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
@@ -57,27 +55,23 @@ export default function Dashboard() {
       setFetchLoading(false);
     }
   };
-  const loginAgain = async () => {
-    try {
-      await removeSession();
-      await signOut();
-      router.push("/login");
-    } catch (error) {}
-  };
-  const closePopup = async () => {
-    try {
-      setIsOpen(false);
-      await fetchItems();
-    } catch (error) {}
-  };
 
   useEffect(() => {
-    const logoutQuery = searchParams.get("logout");
-    if (logoutQuery == "true") {
-      setIsOpen(true);
-    } else {
-      (async () => await fetchItems())();
-    }
+    const init = async () => {
+      try {
+        const logoutQuery = searchParams.get("logout");
+        if (logoutQuery == "true") {
+          setIsOpen(true);
+          setTimeout(async () => {
+            await refreshToken();
+            setIsOpen(false);
+          }, 9000);
+        } else {
+          await fetchItems();
+        }
+      } catch (error) {}
+    };
+    init();
   }, []);
   useEffect(() => {
     document.title = "Dashboard | Popupr";
@@ -150,16 +144,14 @@ export default function Dashboard() {
           <DialogTitle></DialogTitle>
           <div className="flex flex-col gap-4">
             <div className="text-center flex items-center flex-col gap-4">
-              <RefreshCcwIcon size={90} />
-              <p className="text-xl md:text-3xl font-bold">
-                Please logout and login again. It will update your session data.
+              <RefreshCwIcon
+                size={90}
+                className="animate-spin-slow text-indigo-500"
+              />
+              <p className="text-xl md:text-3xl font-bold mb-5">
+                Your purchase verification is in progress. Please don't close
+                the browser.
               </p>
-            </div>
-            <div className="flex justify-center gap-4 mt-5">
-              <Button variant="danger" onClick={closePopup}>
-                Cancel
-              </Button>
-              <Button onClick={loginAgain}>Logout</Button>
             </div>
           </div>
         </DialogContent>

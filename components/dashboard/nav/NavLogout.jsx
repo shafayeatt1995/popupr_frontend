@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
 import { LogOutIcon } from "lucide-react";
-import { signOut } from "next-auth/react";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { removeSession } from "@/services/nextAuth";
+import { logOut } from "@/services/nextAuth";
 
 export default function NavLogout() {
   const submit = async () => {
-    await removeSession();
-    await signOut();
+    await logOut();
   };
   return (
     <DropdownMenuItem
