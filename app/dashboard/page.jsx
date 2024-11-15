@@ -64,15 +64,20 @@ export default function Dashboard() {
           setIsOpen(true);
           setTimeout(async () => {
             await refreshToken();
+            window.history.replaceState(
+              {},
+              document.title,
+              window.location.pathname
+            );
             setIsOpen(false);
-          }, 9000);
+          }, 10000);
         } else {
           await fetchItems();
         }
       } catch (error) {}
     };
     init();
-  }, []);
+  }, [searchParams]);
   useEffect(() => {
     document.title = "Dashboard | Popupr";
   }, []);
