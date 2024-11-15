@@ -5,7 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { paginate } from "@/utils";
-import { ChevronRightIcon, Loader2Icon, RefreshCwIcon } from "lucide-react";
+import {
+  ChevronRightIcon,
+  CircleCheckBigIcon,
+  Loader2Icon,
+  RefreshCwIcon,
+} from "lucide-react";
 import PopupItem from "@/components/dashboard/PopupItem";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSearchParams } from "next/navigation";
@@ -16,6 +21,7 @@ export default function Dashboard() {
   const searchParams = useSearchParams();
   const perPage = 24;
   const [isOpen, setIsOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [fetchLoading, setFetchLoading] = useState(false);
   const [domains, setDomains] = useState([]);
@@ -61,15 +67,15 @@ export default function Dashboard() {
       try {
         const verifyQuery = searchParams.get("verify");
         if (verifyQuery == "true") {
+          window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+          );
           setIsOpen(true);
           setTimeout(async () => {
             await refreshToken();
-            window.history.replaceState(
-              {},
-              document.title,
-              window.location.pathname
-            );
-            setIsOpen(false);
+            setIsSuccess(true);
           }, 10000);
         } else {
           await fetchItems();
@@ -149,13 +155,18 @@ export default function Dashboard() {
           <DialogTitle></DialogTitle>
           <div className="flex flex-col gap-4">
             <div className="text-center flex items-center flex-col gap-4">
-              <RefreshCwIcon
-                size={90}
-                className="animate-spin-slow text-indigo-500"
-              />
+              {isSuccess ? (
+                <CircleCheckBigIcon size={90} className="text-green-500" />
+              ) : (
+                <RefreshCwIcon
+                  size={90}
+                  className="animate-spin-slow text-indigo-500"
+                />
+              )}
               <p className="text-xl md:text-3xl font-bold mb-5">
-                Your purchase verification is in progress. Please don't close
-                the browser.
+                {isSuccess
+                  ? `Your purchase is verified. Thank you for your order.`
+                  : `Your purchase verification is in progress. Please don't close the browser.`}
               </p>
             </div>
           </div>
