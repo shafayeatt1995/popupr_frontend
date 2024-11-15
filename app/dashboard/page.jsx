@@ -59,8 +59,8 @@ export default function Dashboard() {
   useEffect(() => {
     const init = async () => {
       try {
-        const logoutQuery = searchParams.get("logout");
-        if (logoutQuery == "true") {
+        const verifyQuery = searchParams.get("verify");
+        if (verifyQuery == "true") {
           setIsOpen(true);
           setTimeout(async () => {
             await refreshToken();
