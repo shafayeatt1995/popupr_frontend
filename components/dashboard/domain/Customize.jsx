@@ -49,16 +49,19 @@ export default function Customize({ params }) {
     setMessages((p) => [...p, message]);
   };
   const handleImage = (index, file) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
+    if (file) {
       const updatedMessages = [...messages];
-      updatedMessages[index] = {
-        ...updatedMessages[index],
-        image: reader.result,
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        updatedMessages[index] = {
+          ...updatedMessages[index],
+          preview: reader.result,
+          file,
+        };
+        setMessages(updatedMessages);
       };
-      setMessages(updatedMessages);
-    };
-    if (file) reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
+    }
   };
   const removeMessages = (i) => {
     if (messages[i].key) {
@@ -84,16 +87,28 @@ export default function Customize({ params }) {
     }
   };
   const updateMessage = async (e) => {
+    e.preventDefault();
     if (click.current) {
       try {
-        e.preventDefault();
         click.current = false;
         setMessageLoading(true);
-        await userApi.updateMessage({
-          messages,
-          _id: domain._id,
-          deleteList: deleteList.current,
+
+        const formData = new FormData();
+        formData.append("_id", domain._id);
+        formData.append("deleteList", JSON.stringify(deleteList.current));
+        const newMessage = messages.map((val) => {
+          const newVal = { ...val };
+          delete newVal.file;
+          delete newVal.preview;
+          return newVal;
         });
+        formData.append("messages", JSON.stringify(newMessage));
+
+        messages.forEach((msg, index) => {
+          if (msg.file) formData.append(`${index}`, msg.file);
+        });
+
+        await userApi.updateMessage(formData);
         toast.success("Timer successfully updated");
         fetchDomain();
       } catch (error) {
@@ -249,16 +264,16 @@ export default function Customize({ params }) {
                           <div>
                             <div
                               className={`size-16 flex justify-center ${
-                                message.image ? "" : "border"
+                                message.preview ? "" : "border"
                               }`}
                             >
                               <label
                                 className="w-full bg-white p-2 flex justify-center items-center rounded-lg"
                                 htmlFor={`image-${i}`}
                               >
-                                {message.image ? (
+                                {message.preview || message.image ? (
                                   <img
-                                    src={message.image}
+                                    src={message.preview || message.image}
                                     className="w-14 object-contain rounded-sm"
                                     alt={message.title}
                                   />

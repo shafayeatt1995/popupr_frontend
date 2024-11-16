@@ -16,8 +16,8 @@ export async function updateTimer(body) {
   return apiFetch.put(`/user/domain/timer`, body);
 }
 
-export async function updateMessage(body) {
-  return apiFetch.put(`/user/domain/message`, body);
+export async function updateMessage(formData) {
+  return apiFetch.put(`/user/domain/message`, null, formData);
 }
 
 export async function deleteDomain(params) {

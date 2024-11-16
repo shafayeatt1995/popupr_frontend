@@ -12,7 +12,9 @@ const apiFetch = {
 
     const options = {
       method,
-      headers: formData ? {} : headers,
+      headers: formData
+        ? { ...(token && { Authorization: `Bearer ${token}` }) }
+        : headers,
       body: formData || (jsonBody && JSON.stringify(jsonBody)),
     };
 
