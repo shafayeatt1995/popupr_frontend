@@ -76,7 +76,7 @@ export default function Dashboard() {
           setTimeout(async () => {
             await refreshToken();
             setIsSuccess(true);
-          }, 10000);
+          }, 12000);
         } else {
           await fetchItems();
         }
