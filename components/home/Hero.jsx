@@ -38,7 +38,7 @@ export default function Hero() {
           <span> with </span>
           <br className="md:hidden" />
           <span className="border-b-4 md:border-b-8 border-indigo-200 border-dashed group-hover:border-indigo-500 duration-200 transition-all">
-            Attention Grabbing Pop-Up Call
+            Attention Grabbing PopUp
           </span>
         </h1>
         <p className="md:text-lg max-w-xl text-center md:mt-16 mt-8">
