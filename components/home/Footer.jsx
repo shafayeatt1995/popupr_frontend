@@ -58,11 +58,18 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t md:px-10 md:py-8 p-4">
+      <div className="border-t md:px-10 md:py-8 p-4 flex justify-between flex-col md:flex-row gap-2">
         <p className="text-sm lg:text-left text-center">
           Hey 👋 I{`'`}m shafayet, creator of PopUpr. Thanks for taking the time
           to explore!.
         </p>
+        <a
+          href="mailto:support@popupr.com"
+          className="text-indigo-500 text-center"
+          aria-label="Email support at support@popupr.com"
+        >
+          support@popupr.com
+        </a>
       </div>
     </footer>
   );
