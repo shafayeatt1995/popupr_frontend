@@ -9,7 +9,7 @@ export default function PricingTable() {
         <div className="mb-6 text-center">
           <h3 className="text-gray-800 text-3xl font-bold">
             {/* <del>$40</del> */}
-            <span className="text-6xl">$15</span>
+            <span className="text-6xl">$19</span>
             <sub className="text-sm font-medium">USD</sub>
           </h3>
         </div>
@@ -46,7 +46,7 @@ export default function PricingTable() {
         <div className="mb-6 text-center">
           <h3 className="text-gray-800 text-3xl font-bold">
             {/* <del>$60</del> */}
-            <span className="text-6xl">$25</span>
+            <span className="text-6xl">$29</span>
             <sub className="text-sm font-medium">USD</sub>
           </h3>
         </div>
