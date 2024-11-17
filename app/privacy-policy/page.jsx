@@ -25,7 +25,7 @@ export default function page() {
           </p>
 
           <p className="text-gray-700 mb-6">
-            Thank you for visiting PopUpr. This Privacy Policy outlines how we
+            Thank you for visiting Popupr. This Privacy Policy outlines how we
             collect, use, and protect your personal and non-personal information
             when you use our website located at{" "}
             <Link href="/" className="text-indigo-600 underline">
@@ -109,7 +109,7 @@ export default function page() {
               4. {`Children's`} Privacy
             </h2>
             <p className="text-gray-700">
-              PopUpr is not intended for children under 13. We do not knowingly
+              Popupr is not intended for children under 13. We do not knowingly
               collect information from children. If you believe your child has
               provided us with personal information, please contact us at the
               email below.
@@ -151,7 +151,7 @@ export default function page() {
           </div>
 
           <p className="text-gray-700">
-            By using PopUpr, you consent to the terms of this Privacy Policy.
+            By using Popupr, you consent to the terms of this Privacy Policy.
           </p>
         </section>
       </div>

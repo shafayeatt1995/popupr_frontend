@@ -58,7 +58,7 @@ export default function Hero() {
             href="#pricing"
             className={`${cn(buttonVariants({ variant: "indigo" }))} px-10`}
           >
-            Get PopUpr <ArrowRightIcon />
+            Get Popupr <ArrowRightIcon />
           </Link>
           <a
             href="https://www.producthunt.com/posts/popupr?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-popupr"
