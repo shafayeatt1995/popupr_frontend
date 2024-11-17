@@ -64,7 +64,7 @@ export default function Hero() {
             href="https://www.producthunt.com/posts/popupr?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-popupr"
             target="_blank"
           >
-            <img
+            <Image
               src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=622432&theme=light"
               alt="Popupr - Convert&#0032;your&#0032;site&#0032;visitor&#0032;into&#0032;customer | Product Hunt"
               style={{ width: "250px", height: "54px" }}
