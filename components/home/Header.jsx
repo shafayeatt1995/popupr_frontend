@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
       <div className="bg-black text-white text-center p-2 relative z-20">
-        <p>🎊 First 100 members will enjoy lifetime access 🎊</p>
+        <p>🎊 First 100 members will get lifetime access 🎊</p>
       </div>
       <div className="container mx-auto relative z-10">
         <div className="flex justify-between p-4 bg-white">
