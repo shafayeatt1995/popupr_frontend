@@ -7,7 +7,11 @@ import {
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
-import { CreditCardIcon, SquareArrowOutUpRightIcon } from "lucide-react";
+import {
+  CreditCardIcon,
+  DollarSignIcon,
+  SquareArrowOutUpRightIcon,
+} from "lucide-react";
 import NavAction from "./NavAction";
 import NavLogout from "./NavLogout";
 import Link from "next/link";
@@ -24,7 +28,7 @@ export default function Nav({ user }) {
             <p className="text-2xl font-bold">Popupr</p>
           </Link>
           <div className="flex md:gap-5 gap-2 items-center">
-            <NavAction user={user} />
+            {/* <NavAction user={user} /> */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
@@ -39,7 +43,10 @@ export default function Nav({ user }) {
               <DropdownMenuContent className="w-40 bg-white" align="end">
                 <DropdownMenuGroup>
                   <DropdownMenuItem className="cursor-pointer">
-                    <CreditCardIcon /> Billing
+                    <Link href="/#pricing" className="flex gap-2 items-center">
+                      <DollarSignIcon />
+                      Pricing
+                    </Link>
                   </DropdownMenuItem>
                   <NavLogout />
                 </DropdownMenuGroup>
