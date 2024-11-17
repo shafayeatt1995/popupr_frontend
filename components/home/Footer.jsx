@@ -64,11 +64,11 @@ export default function Footer() {
           to explore!.
         </p>
         <a
-          href="mailto:support@popupr.com"
+          href="mailto:contact@popupr.com"
           className="text-indigo-500 text-center"
-          aria-label="Email support at support@popupr.com"
+          aria-label="Email support at contact@popupr.com"
         >
-          support@popupr.com
+          contact@popupr.com
         </a>
       </div>
     </footer>

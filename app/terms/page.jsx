@@ -27,9 +27,9 @@ export default function page() {
           <p class="text-gray-700 mb-6">
             Welcome to PopUpr! These Terms of Service govern your use of the
             PopUpr website at{" "}
-            <a href="https://popupr.com" class="text-indigo-500 underline">
+            <Link href="/" class="text-indigo-500 underline">
               https://popupr.com
-            </a>{" "}
+            </Link>{" "}
             and the services provided by PopUpr. By using our Website and
             services, you agree to these Terms.
           </p>
@@ -105,8 +105,11 @@ export default function page() {
           <p class="text-gray-700">
             For any questions or concerns about these Terms of Service, please
             contact us at{" "}
-            <a href="mailto:anik@popupr.com" class="text-indigo-600 underline">
-              anik@popupr.com
+            <a
+              href="mailto:contact@popupr.com"
+              class="text-indigo-600 underline"
+            >
+              contact@popupr.com
             </a>
             .
           </p>

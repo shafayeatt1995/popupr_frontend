@@ -28,9 +28,9 @@ export default function page() {
             Thank you for visiting PopUpr. This Privacy Policy outlines how we
             collect, use, and protect your personal and non-personal information
             when you use our website located at{" "}
-            <a href="https://popupr.com" className="text-indigo-600 underline">
+            <Link href="/" className="text-indigo-600 underline">
               https://popupr.com
-            </a>
+            </Link>
             .
           </p>
 
@@ -138,10 +138,10 @@ export default function page() {
             <p className="text-gray-700">
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:anik@popupr.com"
+                href="mailto:contact@popupr.com"
                 className="text-indigo-600 underline"
               >
-                anik@popupr.com
+                contact@popupr.com
               </a>
             </p>
             <p className="text-gray-700 mt-4">
