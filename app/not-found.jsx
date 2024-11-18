@@ -3,6 +3,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { initLottie } from "@/utils";
 import { Undo2Icon } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 export default function NotFound() {
@@ -37,7 +38,7 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mt-4 text-gray-500">
-          Sorry, the page you are looking for doesn't exist. Here are some
+          Sorry, the page you are looking for doesn{`'`}t exist. Here are some
           helpful links:
         </p>
 
@@ -47,29 +48,18 @@ export default function NotFound() {
             <span>Go back</span>
           </Button>
 
-          <a
+          <Link
             href="/"
             className={`${cn(
               buttonVariants({ variant: "indigo", size: "lg" })
             )}`}
           >
             Take me home
-          </a>
+          </Link>
         </div>
       </div>
 
       <div ref={loadingRef} className="max-h-80"></div>
-      {/* <div className="relative w-full mt-12 lg:w-1/2 lg:mt-0">
-          <nuxt-img
-            loading="lazy"
-            decoding="async"
-            src="/images/404.svg"
-            className="object-contain w-full"
-            alt="404 page not found"
-            title="404 page not found"
-            fit="cover"
-          />
-        </div> */}
     </div>
   );
 }
