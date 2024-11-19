@@ -60,45 +60,6 @@ export default function Hero() {
           >
             Get Popupr <ArrowRightIcon />
           </Link>
-          <a
-            href="https://www.producthunt.com/posts/popupr?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-popupr"
-            target="_blank"
-          >
-            <Image
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=622432&theme=light"
-              alt="Popupr - Convert&#0032;your&#0032;site&#0032;visitor&#0032;into&#0032;customer | Product Hunt"
-              style={{ width: "250px", height: "54px" }}
-              width="250"
-              height="54"
-            />
-          </a>
-          {/* <ChevronUpIcon size={32} className="mt-3" />
-          <div className="flex bg-indigo-300 p-2 rounded-lg gap-3 items-center">
-            <Image
-              src="/images/guillermo.jpg"
-              alt="guillermo"
-              width={60}
-              height={60}
-              className="rounded-md"
-            />
-            <div className="flex flex-col pr-2">
-              <p className="">This is so clever 👏</p>
-              <p className="font-normal">Guillermo R. — Vercel CEO</p>
-            </div>
-          </div>onUpIcon size={32} className="mt-3" />
-          <div className="flex bg-indigo-300 p-2 rounded-lg gap-3 items-center">
-            <Image
-              src="/images/guillermo.jpg"
-              alt="guillermo"
-              width={60}
-              height={60}
-              className="rounded-md"
-            />
-            <div className="flex flex-col pr-2">
-              <p className="">This is so clever 👏</p>
-              <p className="font-normal">Guillermo R. — Vercel CEO</p>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
