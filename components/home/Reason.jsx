@@ -28,7 +28,7 @@ export default function Reason() {
           Give your visitors a reason
           <br className="hidden md:block" />
           to buy today,
-          <span className="px-4 ml-1.5 leading-relaxed whitespace-nowrap bg-gradient text-white">
+          <span className="px-4 ml-1.5 leading-relaxed whitespace-nowrap bg-gradient text-white rounded-lg">
             not tomorrow
           </span>
         </h2>

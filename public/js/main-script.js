@@ -103,6 +103,17 @@
       }
     }, start);
     document.body.appendChild(s);
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 500) {
+        document.querySelector(".popupr-container")?.style.transition =
+          "opacity 300ms";
+        document.querySelector(".popupr-container")?.style.opacity = "0";
+        setTimeout(() => {
+          document.querySelector(".popupr-container")?.remove();
+          window.removeEventListener("scroll", () => {});
+        }, 500);
+      }
+    });
   };
 
   window.addEventListener("load", b);
