@@ -29,13 +29,13 @@ export default function Footer() {
             <h4 className="text-lg font-bold md:mb-6 mb-2">LINKS</h4>
             <ul className="md:space-y-4 space-y-2 text-gray-600">
               <li>
-                <Link
-                  href="https://feedpack.xyz/dashboard/board/popupr"
+                <a
+                  href="https://feedpack.xyz/board/popupr"
                   target="_blank"
                   className="hover:underline"
                 >
                   Report or submit feedback
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="#pricing" className="hover:underline">
